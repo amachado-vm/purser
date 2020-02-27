@@ -25,19 +25,19 @@ kubectl create ns purser
 
 # DB setup
 echo "Setting up database for Purser"
-curl https://raw.githubusercontent.com/vmware/purser/master/cluster/minimal/purser-database-setup.yaml -O
+curl https://raw.githubusercontent.com/amachado-vm/purser/master/cluster/minimal/purser-database-setup.yaml -O
 kubectl --namespace=purser create -f purser-database-setup.yaml
 echo "Waiting for database containers to be in running state... (30s)"
 sleep 30s
 
 # Purser controller setup
 echo "Setting up controller for Purser"
-curl https://raw.githubusercontent.com/vmware/purser/master/cluster/minimal/purser-controller-setup.yaml -O
+curl https://raw.githubusercontent.com/amachado-vm/purser/master/cluster/minimal/purser-controller-setup.yaml -O
 kubectl --namespace=purser create -f purser-controller-setup.yaml
 
 # Purser UI setup
 echo "Setting up UI for Purser"
-curl https://raw.githubusercontent.com/vmware/purser/master/cluster/minimal/purser-ui-setup.yaml -O
+curl https://raw.githubusercontent.com/amachado-vm/purser/master/cluster/minimal/purser-ui-setup.yaml -O
 kubectl --namespace=purser create -f purser-ui-setup.yaml
 
 echo "Purser setup is completed"
